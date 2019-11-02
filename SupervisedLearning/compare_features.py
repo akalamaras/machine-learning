@@ -46,6 +46,30 @@ def histogram_feature_on_classes(data, classes, feature):
     plt.show()
 
 
+def plot_scatter_feature(data, class1_matrix, class2_matrix, feature1, feature2):
+
+    """
+    Plots a scatter plot of to visualise the distribution of a pair of features on 2 classes
+
+    :param data: The data matrix
+    :param class1_matrix: The matrix of class A
+    :param class2_matrix: The matrix of class B
+    :param feature1: The number indicating feature 1 on the data matrix
+    :param feature2: The number indicating feature 2 on the data matrix
+    """
+
+    feature1_x = data[class1_matrix, feature1]
+    feature1_y = data[class2_matrix, feature1]
+
+    feature2_x = data[class1_matrix, feature2]
+    feature2_y = data[class2_matrix, feature2]
+
+    plt.scatter(feature1_x, feature1_y, s=20, c='r', marker='+')
+    plt.scatter(feature2_x, feature2_y, s=20, c='b', marker='o')
+
+    plt.show()
+
+
 """
 data = np.loadtxt(open("data/liver_data.txt", "rb"), delimiter = ",")
 
